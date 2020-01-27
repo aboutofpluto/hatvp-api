@@ -8,6 +8,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #
+    'rest_framework',
+    'rest_auth',
+    # 'corsheaders', # only debug
+    'django_filters',
+    #'drf_writable_nested',
+    #
     'hatvp',
 ]
 
