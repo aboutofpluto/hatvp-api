@@ -46,7 +46,7 @@ $ cp lobbyapi/local_settings.py.sample lobbyapi/local_settings.py
 ```
 
 Edit the DATABASE section to connect to your database service.
-See for more information
+See https://docs.djangoproject.com/en/5.2/ref/databases/ for more information
 
 5. Import data:
 
