@@ -56,7 +56,10 @@ class Command(BaseCommand):
                                 defaults[field.attname] = datetime.strptime(value, "%Y-%m-%d")
                         # else, simply set the field
                         else:
-                            defaults[field.attname] = value
+                            if hasattr(field, "max_length"):
+                                defaults[field.attname] = value[:field.max_length]
+                            else:
+                                defaults[field.attname] = value
                 # update or create an instance
                 cls.objects.update_or_create(defaults, pk=defaults["id"])
                 cnt += 1

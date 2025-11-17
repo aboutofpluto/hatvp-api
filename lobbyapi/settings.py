@@ -9,7 +9,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #
     'rest_framework',
-    'rest_auth',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
     # 'corsheaders', # only debug
     'django_filters',
     #'drf_writable_nested',
