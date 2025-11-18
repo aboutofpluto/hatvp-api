@@ -11,6 +11,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
+    'schema_viewer',
     # 'corsheaders', # only debug
     'django_filters',
     #'drf_writable_nested',
@@ -74,4 +75,17 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+# DRF
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 50,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
+
+SCHEMA_VIEWER = {
+    'apps': [
+        'hatvp',
+    ],
+}
 from .local_settings import *

@@ -61,7 +61,11 @@ class Command(BaseCommand):
                             else:
                                 defaults[field.attname] = value
                 # update or create an instance
-                cls.objects.update_or_create(defaults, pk=defaults["id"])
+                try:
+                    cls.objects.update_or_create(defaults, pk=defaults["id"])
+                except:
+                    print("failure")
+                    continue
                 cnt += 1
                 if cnt % 100:
                     print(".", end='', flush=True)
@@ -90,19 +94,19 @@ class Command(BaseCommand):
         import data in the correct order
         '''
 #        self.download_and_unzip()
-        self.import_csv(GeneralInformation)
-        self.import_csv(Director)
-        self.import_csv(Associate)
-        self.import_csv(Client)
-        self.import_csv(Affiliation)
-        self.import_csv(Level)
-        self.import_csv(Period)
-        self.import_csv(Activity)
-        self.import_csv(Domain)
-        self.import_csv(Field)
-        self.import_csv(Action)
-        self.import_csv(TypeAction)
-        self.import_csv(Beneficiary)
-#        self.import_csv(Decision)
-#        self.import_csv(Target)
-#        self.import_csv(Observation)
+        # self.import_csv(GeneralInformation)
+        # self.import_csv(Director)
+        # self.import_csv(Associate)
+        # self.import_csv(Client)
+        # self.import_csv(Affiliation)
+        # self.import_csv(Level)
+        # self.import_csv(Period)
+        # self.import_csv(Activity)
+        # self.import_csv(Domain)
+        # self.import_csv(Field)
+        # self.import_csv(Action)
+        # self.import_csv(TypeAction)
+        # self.import_csv(Beneficiary)
+        self.import_csv(Decision)
+        self.import_csv(Target)
+        self.import_csv(Observation)
